@@ -1,5 +1,9 @@
-if game.CoreGui:FindFirstChild("Trident") then
-    game.CoreGui.Trident:Destroy()
+for i,v in pairs(game.CoreGui:GetDescendants()) do
+    if v:IsA("TextLabel") then
+        if string.sub(v.Text, 1, 7) == "TRXDENT" then
+            v.Parent:Destroy()
+        end
+    end
 end
 
 
@@ -1377,7 +1381,7 @@ local function getObjGen()
             Gui.Logo.LayoutOrder = -5
             Gui.Logo.Size = UDim2.new(1, 0, 0.100000001, 0)
             Gui.Logo.ZIndex = 122
-            Gui.Logo.Image = "rbxassetid://8343875413"
+            Gui.Logo.Image = "rbxassetid://17075272404"
             Gui.Logo.ImageColor3 = Color3.fromRGB(134, 142, 255)
             Gui.Logo.ScaleType = Enum.ScaleType.Fit
 
