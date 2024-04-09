@@ -4171,6 +4171,10 @@ function UILibrary.Section:Button(sett, callback)
 
     local element = cheatBase.Content.ElementContent.Button
 
+    functions.delete = function()
+        element:Destroy()
+    end
+
     setupEffects(element, element.HoverFrame):Connect(
         function()
             callback()
@@ -4206,6 +4210,10 @@ function UILibrary.Section:Checkbox(sett, callback)
     local element = cheatBase.Content.ElementContent.Checkbox
 
     local toggleEnabled = false
+
+    functions.delete = function()
+        element:Destroy()
+    end
 
     functions.setValue = function(new)
         toggleEnabled = new
@@ -4274,6 +4282,10 @@ function UILibrary.Section:Toggle(sett, callback)
     local element = cheatBase.Content.ElementContent.Toggle
 
     local toggleEnabled = false
+
+    functions.delete = function()
+        element:Destroy()
+    end
 
     functions.setValue = function(new)
         toggleEnabled = new
@@ -4354,6 +4366,10 @@ function UILibrary.Section:Textbox(sett, callback)
     cheatBase.LayoutOrder = getLayoutOrder(self.Section.Border.Content)
 
     local element = cheatBase.Content.ElementContent.Textbox
+
+    functions.delete = function()
+        element:Destroy()
+    end
 
     local function updateSize()
         local textBounds = math.clamp(element.Text.TextBounds.X, 10, element.Parent.AbsoluteSize.X) + 20
@@ -4447,6 +4463,10 @@ function UILibrary.Section:Keybind(sett, callback)
     cheatBase.LayoutOrder = getLayoutOrder(self.Section.Border.Content)
 
     local element = cheatBase.Content.ElementContent.Keybind
+
+    functions.delete = function()
+        element:Destroy()
+    end
 
     local function updateSize()
         local textBounds = math.clamp(element.Text.TextBounds.X, 10, element.Parent.AbsoluteSize.X) + 20
@@ -4615,6 +4635,10 @@ function UILibrary.Section:ColorPicker(sett, callback)
 
     local menuIsOpen = false
     local currentclr = Color3.fromRGB(255, 255, 255)
+
+    functions.delete = function()
+        element:Destroy()
+    end
 
     functions.setValue = function(clr)
         TweenService:Create(
@@ -5037,6 +5061,10 @@ function UILibrary.Section:Slider(sett, callback)
     local sliderValue = sett.Min
     local scaleValue = 0
 
+    functions.delete = function()
+        element:Destroy()
+    end
+
     functions.getData = function()
         return sett
     end
@@ -5193,6 +5221,10 @@ function UILibrary.Section:Dropdown(sett, callback)
     local selectedOptions = {}
 
     local optionConnections = {}
+
+    functions.delete = function()
+        element:Destroy()
+    end
 
     functions.refreshUI = function()
         local String = ""
