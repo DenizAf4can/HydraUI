@@ -3255,6 +3255,33 @@ function UILibrary.new(gameName, userId, rank)
     local window = objectGenerator.new("Window")
     window.Parent = GUI
 
+    local SCG = Instance.new("ScreenGui", game.CoreGui)
+
+    local OpenClose = Instance.new("ImageButton")
+    OpenClose.Name = "OpenClose"
+    OpenClose.Parent = SCG
+    OpenClose.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    OpenClose.BackgroundTransparency = 1.000
+    OpenClose.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    OpenClose.BorderSizePixel = 0
+    OpenClose.Position = UDim2.new(0.464460582, 0, 0.365487009, 0)
+    OpenClose.Size = UDim2.new(0, 50, 0, 50)
+    OpenClose.Image = "rbxassetid://18271678949"
+    OpenClose.ZIndex = 999
+    OpenClose.Draggable = true
+    OpenClose.Visible = false
+
+
+    OpenClose.MouseButton1Click:Connect(function()
+        OpenClose.Visible = false
+        GUI.Enabled = true
+    end)
+
+    function UILibrary.Hide()
+        GUI.Enabled = false
+        OpenClose.Visible = true
+    end
+
     --// make UI draggable
     -->> LogoHitbox
 
