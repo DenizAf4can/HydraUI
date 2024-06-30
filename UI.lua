@@ -3272,6 +3272,9 @@ function UILibrary.new(gameName, userId, rank)
     OpenClose.Draggable = true
     OpenClose.Visible = false
 
+    GUI.Destroying:Connect(function()
+        SCG:Destroy()
+    end)
 
     OpenClose.MouseButton1Click:Connect(function()
         OpenClose.Visible = false
