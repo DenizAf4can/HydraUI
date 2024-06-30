@@ -3256,6 +3256,7 @@ function UILibrary.new(gameName, userId, rank)
     window.Parent = GUI
 
     local SCG = Instance.new("ScreenGui", game.CoreGui)
+    SCG.Name = HttpService:GenerateGUID(false)
 
     local OpenClose = Instance.new("ImageButton")
     OpenClose.Name = "OpenClose"
