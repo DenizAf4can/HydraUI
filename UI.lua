@@ -5293,7 +5293,11 @@ function UILibrary.Section:Dropdown(sett, callback)
         end
 
         if String == "" then
-            String = "None"
+            if sett.Placeholder ~= nil then
+                String = sett.Placeholder
+            else
+                String = "None"
+            end
         end
 
         element.MainHolder.Content.Text.Text = String
